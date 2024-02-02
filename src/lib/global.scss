@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    //scrollbar width
+    scrollbar-width: none;
+}
+
+body{
+    background: rgb(255, 255, 255);
+}
+
+@font-face {
+    font-family: Now;
+    src: url('$lib/fonts/now-web.woff2') format('woff2');
+}
+
+//hide scrollbar
+body::-webkit-scrollbar {
+    display: none;
+}
