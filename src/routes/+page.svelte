@@ -18,12 +18,15 @@
 
 <div class="content">
     <header>
-        <img class="logo" src="/images/logo.png" alt="Logo">
-        <h1>BrainBird.org</h1>
-        <div class="intro">
-            BrainBird build software and solutions for the web, mobile, and desktop. We are a team of developers, designers, and product managers who are passionate about building quality software.
-        </div>
+        <div class="title">BrainBird.org</div>
     </header>
+
+    <main>
+        <img src="/images/logo.png" alt="Logo">
+        <section>
+            We are a team of passionate developers, designers, and marketers who are dedicated to making the world a better place through technology.
+        </section>
+    </main>
 
     <div class="aboutMembers">
         <h2>Our Team</h2>
@@ -44,71 +47,90 @@
 </div>
 
 <style lang="scss">
-    .logo{
-        height: 80px;
-        //blend the white background with the image
-        mix-blend-mode: multiply;
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 800;
+    padding: 10px;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-size: 1rem;
+
+    img{
+        width: 200px;
+    }
+}
+
+.aboutMembers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-size: 1rem;
+    background: black;
+    color: white;
+    width: 100%;
+
+    h2{
+        font-size: 1.5rem;
+        font-weight: 800;
     }
 
-    .content{
-        font-family: Now;
-        position: relative;
-        min-height: 100vh;
+    ul{
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
 
-    header{
+    .member{
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 20px;
-        background-color: #e4f3ff;
-    }
+        font-size: 1rem;
 
-    .intro{
-        max-width: 600px;
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .aboutMembers{
-        margin-top: 40px;
-        h2{
-            text-align: center;
+        img{
+            width: 70px;
+            height: 70px;
+            background: #d4f2ff;
+            border-radius: 50%;
         }
-        ul{
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            .member{
-                margin: 20px;
-                text-align: center;
-                img{
-                    height: 100px;
-                    width: 100px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                    outline: 3px solid white;
-                    background: #e4f3ff;
-                }
-            }
+        p{
+            font-size: 0.8rem;
         }
     }
+}
 
-
-    footer{
-        text-align: center;
-        font-size: 0.7rem;
-        padding: 5px;
-        background-color: black;
-        color: white;
-        width: 100%;
-        bottom: 0;
-    }
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 0.7rem;
+}
 
 </style>
