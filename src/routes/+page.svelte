@@ -10,7 +10,7 @@
             'image': 'fuad',
         },
         'Muntasir H. Bokhari': {
-            'role': 'Salesman',
+            'role': 'Co-Founder & CMO',
             'image': 'bokhari',
         }
     }
