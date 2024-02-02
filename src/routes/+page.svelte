@@ -18,17 +18,42 @@
 
 <div class="content">
     <header>
-        <div class="title">BrainBird.org</div>
+        <div class="title">
+            <img src="/images/logo.png" alt="Logo">
+        </div>
     </header>
 
-    <main>
-        <img src="/images/logo.png" alt="Logo">
-        <section>
-            We are a team of passionate developers, designers, and marketers who are dedicated to making the world a better place through technology.
-        </section>
-    </main>
+    <section class="main">
+        The best optimized solutions
+    </section>
 
-    <div class="aboutMembers">
+    <section class="whatwedo">
+        <h2>What we do</h2>
+        <ul>
+            <li>
+                <i class="fa-solid fa-code"></i>
+                Web Development 
+            </li>
+            <li>
+                <i class="fa-brands fa-google-play"></i>
+                Mobile App Development 
+            </li>
+            <li>
+                <i class="fa-solid fa-camera-retro"></i>
+                Photography 
+            </li>
+            <li>
+                <i class="fa-solid fa-camera-retro"></i>
+                Graphic Design 
+            </li>
+            <li>
+                <i class="fa-solid fa-marker"></i>
+                Content Writing 
+            </li>
+        </ul>
+    </section>
+
+    <section class="aboutMembers">
         <h2>Our Team</h2>
         <ul>
             {#each Object.keys(members) as member}
@@ -39,7 +64,7 @@
                 </li>
             {/each}
         </ul>
-    </div>
+    </section>
 
     <footer>
         <p>© {new Date().getFullYear()} BrainBird.org</p>
@@ -54,29 +79,88 @@
     align-items: center;
     justify-content: space-between;
     min-height: 100vh;
+    //proximity
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
 }
 
 header{
     display: flex;
+    position: fixed;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     font-weight: 800;
-    padding: 10px;
     font-size: 1.2rem;
     width: 100%;
+    background: #ffffff;
+    z-index: 10;
+
+    img{
+        width: 60px;
+    }
 }
 
-main{
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-size: 2rem;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+    height: 100vh;
+    //scroll snap
+    scroll-snap-align: start;
+}
+
+.whatwedo{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
     font-size: 1rem;
+    background: rgb(34, 212, 153);
+    width: 100%;
+    color: white;
 
-    img{
-        width: 200px;
+    h2{
+        font-size: 1.5rem;
+        padding: 40px;
+        //margin-bottom: auto;
+        font-weight: 800;
     }
+
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        gap: 10px;
+    }
+    
+    li{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        border-radius: 10px;
+        font-size: 1rem;
+        position: relative;
+        width: 100%;
+        i{
+            font-size: 3rem;
+            //opacity: 0.5;
+        }
+    }
+
 }
 
 .aboutMembers{
@@ -85,7 +169,7 @@ main{
     align-items: center;
     padding: 20px;
     font-size: 1rem;
-    background: black;
+    background: rgb(132, 44, 255);
     color: white;
     width: 100%;
 
@@ -129,7 +213,10 @@ footer{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 2px;
+    width: 100%;
+    background: black;
+    color: white;
     font-size: 0.7rem;
 }
 
