@@ -15,6 +15,11 @@ body{
     src: url('$lib/fonts/now-web.woff2') format('woff2');
 }
 
+@font-face {
+    font-family: Comf;
+    src: url('$lib/fonts/comf.woff') format('woff');
+}
+
 //hide scrollbar
 body::-webkit-scrollbar {
     display: none;
