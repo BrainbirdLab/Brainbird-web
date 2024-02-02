@@ -1,3 +1,15 @@
+
+@font-face {
+    font-family: Now;
+    src: url('$lib/fonts/now-web.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: Comf;
+    src: url('$lib/fonts/comf.woff2') format('woff2');
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -8,16 +20,6 @@
 
 body{
     background: rgb(255, 255, 255);
-}
-
-@font-face {
-    font-family: Now;
-    src: url('$lib/fonts/now-web.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: Comf;
-    src: url('$lib/fonts/comf.woff') format('woff');
 }
 
 //hide scrollbar
