@@ -54,6 +54,10 @@
         font-family: Now;
         position: relative;
         min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
     }
 
     header{
@@ -99,7 +103,7 @@
 
     footer{
         text-align: center;
-        position: absolute;
+        font-size: 0.7rem;
         padding: 5px;
         background-color: black;
         color: white;
