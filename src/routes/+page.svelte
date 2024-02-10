@@ -56,7 +56,7 @@
     height: 100svh;
     //proximity
     scroll-snap-type: y proximity;
-    background-image: url('./images/pattern.png');
+    background-image: url('/images/pattern.png');
     overflow-y: scroll;
 }
 
