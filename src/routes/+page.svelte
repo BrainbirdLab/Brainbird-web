@@ -24,37 +24,12 @@
     </header>
 
     <section class="main">
-        The best optimized solutions
-    </section>
+        The best optimized solutions for web and mobile applications.
 
-    <section class="whatwedo">
-        <h2>What we do</h2>
-        <ul>
-            <li>
-                <i class="fa-solid fa-code"></i>
-                Web Development 
-            </li>
-            <li>
-                <i class="fa-brands fa-google-play"></i>
-                Mobile App Development 
-            </li>
-            <li>
-                <i class="fa-solid fa-camera-retro"></i>
-                Photography 
-            </li>
-            <li>
-                <i class="fa-solid fa-camera-retro"></i>
-                Graphic Design 
-            </li>
-            <li>
-                <i class="fa-solid fa-marker"></i>
-                Content Writing 
-            </li>
-        </ul>
     </section>
 
     <section class="aboutMembers">
-        <h2>Our Team</h2>
+        <h2>Meet the Team</h2>
         <ul>
             {#each Object.keys(members) as member}
                 <li class="member">
@@ -78,9 +53,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-height: 100vh;
+    height: 100svh;
     //proximity
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
+    background-image: url('./images/pattern.png');
     overflow-y: scroll;
 }
 
@@ -88,12 +64,13 @@ header{
     display: flex;
     position: fixed;
     flex-direction: row;
+    top: 0;
+    left: 0;
     justify-content: space-between;
     align-items: center;
     font-weight: 800;
     font-size: 1.2rem;
     width: 100%;
-    background: #ffffff;
     z-index: 10;
 
     img{
@@ -104,9 +81,10 @@ header{
 .main{
     display: flex;
     flex-direction: column;
+
     align-items: center;
-    padding: 20px;
-    font-size: 2rem;
+    padding: 20%;
+    font-size: 4rem;
 }
 
 section{
@@ -116,67 +94,24 @@ section{
     justify-content: center;
     padding: 20px;
     width: 100%;
-    height: 100vh;
+    padding: 20px;
     //scroll snap
     scroll-snap-align: start;
 }
 
-.whatwedo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    font-size: 1rem;
-    background: rgb(34, 212, 153);
-    width: 100%;
-    color: white;
-
-    h2{
-        font-size: 1.5rem;
-        padding: 40px;
-        //margin-bottom: auto;
-        font-weight: 800;
-    }
-
-    ul{
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        gap: 10px;
-    }
-    
-    li{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        border-radius: 10px;
-        font-size: 1rem;
-        position: relative;
-        width: 100%;
-        i{
-            font-size: 3rem;
-            //opacity: 0.5;
-        }
-    }
-
-}
-
 .aboutMembers{
+
+    margin-top: 50px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 20%;
     font-size: 1rem;
-    background: rgb(132, 44, 255);
-    color: white;
-    width: 100%;
+    //background: rgb(132, 44, 255);
+    //color: white;
 
-    h2{
-        font-size: 1.5rem;
-        font-weight: 800;
-    }
+    width: 100%;
 
     ul{
         display: flex;
