@@ -73,7 +73,7 @@
     </section>
   
     <footer>
-      <p>&copy; 2024 {companyName}. Pioneering Software Solutions.</p>
+      <p>&copy; {new Date().getFullYear()} {companyName}. Pioneering Software Solutions.</p>
     </footer>
   </main>
   
