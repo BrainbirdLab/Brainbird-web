@@ -1,158 +1,240 @@
 <script lang="ts">
-
-    const members: {[key: string]: {[key: string]: string}} = {
-        'Sakib HS': {
-            'role': 'Co-Founder & CEO',
-            'image': 'sakib',
-        },
-        'Fuad Hasan': {
-            'role': 'Founder & CTO',
-            'image': 'fuad',
-        },
-        'Muntasir H. Bokhari': {
-            'role': 'Co-Founder & CMO',
-            'image': 'bokhari',
-        }
-    }
-</script>
-
-<div class="content">
+    import { onMount } from 'svelte';
+    import { fade, fly } from 'svelte/transition';
+  
+    let companyName: string = "BrainbirdLab";
+    let services: string[] = [
+      "Software Optimization",
+      "Networking Solutions",
+      "Systems Development",
+      "Embedded Applications",
+      "Code Readability Enhancement",
+      "Advanced Bug Fixing"
+    ];
+  
+    let visible = false;
+  
+    onMount(() => {
+      visible = true;
+    });
+  </script>
+  
+  <svelte:head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  </svelte:head>
+  
+  <main>
+    <nav>
+      <div class="logo">{companyName}</div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  
     <header>
-        <div class="title">
-            <img src="/images/logo.png" alt="Logo">
-        </div>
+      {#if visible}
+        <h1 in:fly={{ y: -20, duration: 800 }}>Next-Gen Software Solutions</h1>
+        <p in:fade={{ duration: 1000 }}>Optimizing the future of technology</p>
+      {/if}
     </header>
-
-    <section class="main">
-        The best optimized solutions for web and mobile applications.
-
+  
+    <section id="services" class="services">
+      <h2>Our Expertise</h2>
+      <div class="service-grid">
+        {#each services as service, i}
+          <div class="service-item" in:fly="{{ y: 20, duration: 400, delay: i * 100 }}">
+            <svg class="service-icon" viewBox="0 0 24 24" width="24" height="24">
+              <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 16V8M8 12h8" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <h3>{service}</h3>
+          </div>
+        {/each}
+      </div>
     </section>
-
-    <section class="aboutMembers">
-        <h2>Meet the Team</h2>
-        <ul>
-            {#each Object.keys(members) as member}
-                <li class="member">
-                    <img src={`/images/${members[member].image}.png`} alt={member} width="200" height="200">
-                    <h3>{member}</h3>
-                    <p>{members[member].role}</p>
-                </li>
-            {/each}
-        </ul>
+  
+    <section id="about" class="about">
+      <h2>About Us</h2>
+      <p>
+        At {companyName}, we're at the forefront of software innovation. Our team of elite
+        developers and engineers specialize in creating high-performance, scalable solutions
+        that push the boundaries of what's possible in tech. From optimizing complex systems
+        to developing cutting-edge embedded applications, we transform challenges into
+        opportunities for technological advancement.
+      </p>
     </section>
-
+  
+    <section id="contact" class="contact">
+      <h2>Get in Touch</h2>
+      <p>Ready to elevate your software performance? Contact us to start the conversation.</p>
+      <a href="mailto:fuad.cs22@gmail.com" class="cta-button">Email Us</a>
+    </section>
+  
     <footer>
-        <p>© {new Date().getFullYear()} BrainBird.org</p>
+      <p>&copy; 2024 {companyName}. Pioneering Software Solutions.</p>
     </footer>
-</div>
-
-<style lang="scss">
-
-.content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 100svh;
-    //proximity
-    scroll-snap-type: y proximity;
-    background-image: url('/images/pattern.png');
-    overflow-y: scroll;
-}
-
-header{
-    display: flex;
-    position: fixed;
-    flex-direction: row;
-    top: 0;
-    left: 0;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 800;
-    font-size: 1.2rem;
-    width: 100%;
-    z-index: 10;
-
-    img{
-        width: 60px;
+  </main>
+  
+  <style lang="scss">
+    $primary-color: #00a8ff;
+    $secondary-color: #192a56;
+    $background-color: #f5f6fa;
+    $text-color: #2f3640;
+    $accent-color: #ffa502;
+  
+    :global(body) {
+      background-color: $background-color;
+      margin: 0;
+      padding: 0;
+      color: $text-color;
     }
-}
-
-.main{
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    padding: 20%;
-    font-size: 4rem;
-}
-
-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    width: 100%;
-    padding: 20px;
-    //scroll snap
-    scroll-snap-align: start;
-}
-
-.aboutMembers{
-
-    margin-top: 50px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20%;
-    font-size: 1rem;
-    //background: rgb(132, 44, 255);
-    //color: white;
-
-    width: 100%;
-
-    ul{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-        list-style: none;
-        padding: 0;
-        margin: 0;
+  
+    main {
+      font-family: 'Inter', sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
-
-    .member{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-        font-size: 1rem;
-
-        img{
-            width: 70px;
-            height: 70px;
-            background: #d4f2ff;
-            border-radius: 50%;
+  
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      
+      .logo {
+        font-size: 1.5em;
+        font-weight: 700;
+        color: $primary-color;
+      }
+  
+      .nav-links {
+        a {
+          margin-left: 20px;
+          text-decoration: none;
+          color: $secondary-color;
+          font-weight: 600;
+          transition: color 0.3s ease;
+  
+          &:hover {
+            color: $primary-color;
+          }
         }
-        p{
-            font-size: 0.8rem;
-        }
+      }
     }
-}
-
-footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 2px;
-    width: 100%;
-    background: black;
-    color: white;
-    font-size: 0.7rem;
-}
-
-</style>
+  
+    header {
+      text-align: center;
+      padding: 100px 0;
+      background: linear-gradient(135deg, $secondary-color, $primary-color);
+      color: white;
+      border-radius: 10px;
+      margin-bottom: 60px;
+  
+      h1 {
+        font-size: 3.5em;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+  
+      p {
+        font-size: 1.5em;
+        font-weight: 300;
+      }
+    }
+  
+    section {
+      margin-bottom: 80px;
+  
+      h2 {
+        font-size: 2.5em;
+        color: $secondary-color;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+    }
+  
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+  
+      .service-item {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+  
+        h3 {
+          font-size: 1.2em;
+          margin-top: 15px;
+          color: $secondary-color;
+        }
+  
+        .service-icon {
+          color: $primary-color;
+        }
+      }
+    }
+  
+    .about, .contact {
+      background-color: white;
+      padding: 50px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  
+      p {
+        font-size: 1.1em;
+        line-height: 1.6;
+      }
+    }
+  
+    .contact {
+      text-align: center;
+  
+      .cta-button {
+        display: inline-block;
+        background-color: $accent-color;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: darken($accent-color, 10%);
+        }
+      }
+    }
+  
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      color: $secondary-color;
+    }
+  
+    @media (max-width: 768px) {
+      header {
+        h1 {
+          font-size: 2.5em;
+        }
+        p {
+          font-size: 1.2em;
+        }
+      }
+  
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
