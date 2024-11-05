@@ -12,7 +12,7 @@
       "Advanced Bug Fixing"
     ];
   
-    let visible = false;
+    let visible = $state(false);
   
     onMount(() => {
       visible = true;
@@ -213,7 +213,7 @@
         transition: background-color 0.3s ease;
   
         &:hover {
-          background-color: darken($accent-color, 10%);
+          filter: brightness(95%);
         }
       }
     }

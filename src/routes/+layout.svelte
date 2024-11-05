@@ -1,8 +1,13 @@
 <script lang="ts">
 
-    import "$lib/global.scss";
+    import "$lib/styles/global.scss";
     import "$lib/fontawesome/css/all.min.css";
+    interface Props {
+        children?: import('svelte').Snippet;
+    }
+
+    let { children }: Props = $props();
 
 </script>
 
-<slot/>
+{@render children?.()}

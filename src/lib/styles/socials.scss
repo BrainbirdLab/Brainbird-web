@@ -1,0 +1,35 @@
+.fa-linkedin, .fa-facebook, .fa-instagram, .fa-github, .fa-youtube, .fa-at, .fa-discord{
+    position: relative;
+    color: var(--text-color);
+    transition: 0.2s ease-in-out;
+}
+
+.fa-at:hover{
+    color: #969696;
+    transform: translateY(-2px);
+}
+
+.fa-linkedin:hover{
+    color: #0077b5;
+    transform: translateY(-2px);
+}
+
+.fa-facebook:hover{
+    color: rgb(86, 193, 255);
+    transform: translateY(-2px);
+}
+
+.fa-instagram:hover{
+    color: #fc3876;
+    transform: translateY(-2px);
+}
+
+.fa-github:hover{
+    color: #969696;
+    transform: translateY(-2px);
+}
+
+.fa-discord:hover{
+    color: #5865f2;
+    transform: translateY(-2px);
+}
