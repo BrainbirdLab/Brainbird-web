@@ -28,7 +28,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 0;
+      padding: 20px;
+      width: 100%;
       
       .logo {
         font-size: 1.5em;

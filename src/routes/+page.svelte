@@ -99,7 +99,7 @@
   
     header {
       text-align: center;
-      padding: 100px 0;
+      padding: 100px 10px;
       background: linear-gradient(135deg, rgb(79, 79, 236), var(--accent-color));
       color: white;
       border-radius: 10px;
