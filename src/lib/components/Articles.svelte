@@ -85,13 +85,13 @@
                 currentContentIndex = index + 1;
             } else {
                 currentContentIndex = 1;
-                const url = `/articles/#/${parseTitleFromUrl(data.feed[currentContentIndex - 1]?.link)}`;
+                const url = `/#/${parseTitleFromUrl(data.feed[currentContentIndex - 1]?.link)}`;
                 //replaceState(url, { contact: false, messageSent: false });
                 goto(url, { replaceState: true });
             }
         } else {
             currentContentIndex = 1;
-            const url = `/articles/#/${parseTitleFromUrl(data.feed[currentContentIndex - 1]?.link)}`;
+            const url = `/#/${parseTitleFromUrl(data.feed[currentContentIndex - 1]?.link)}`;
             //replaceState(url, { contact: false, messageSent: false });
             goto(url, { replaceState: true });
         }

@@ -15,8 +15,8 @@
 <div class="logo">BrainbirdLab</div>
 <div class="nav-links">
     <a href="#services" onclick={() => goto("/#services")}>Services</a>
+    <a href="#articles" onclick={() => goto("/#acticles")}>Articles</a>
     <a href="#about" onclick={() => goto("/#about")}>About</a>
-    <a href="/articles">Articles</a>
     <a href="#contact" onclick={() => goto("/#contact")}>Contact</a>
 </div>
 </nav>

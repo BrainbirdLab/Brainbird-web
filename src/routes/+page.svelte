@@ -1,6 +1,9 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import { fade, fly } from 'svelte/transition';
+    import Articles from '$lib/components/Articles.svelte';
+
+    let { data } = $props();
   
     let companyName: string = "BrainbirdLab";
     let services: string[] = [
@@ -48,6 +51,11 @@
       </div>
     </section>
   
+    <section id="articles">
+      <h2>Articles</h2>
+      <Articles {data} />
+    </section>
+
     <section id="about" class="about">
       <h2>About Us</h2>
       <p>
@@ -58,6 +66,8 @@
         opportunities for technological advancement.
       </p>
     </section>
+
+
   
     <section id="contact" class="contact">
       <h2>Get in Touch</h2>
