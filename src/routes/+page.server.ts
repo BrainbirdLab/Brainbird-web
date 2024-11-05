@@ -1,5 +1,7 @@
 import Parser from "rss-parser";
 
+let ssr = true;
+
 export async function load() {
   
   try {

@@ -158,10 +158,6 @@
 
 </script>
 
-<svelte:head>
-    <title>Brainbird | Articles</title>
-</svelte:head>
-
 {#if loaded}
 <div class="shrink-wrapper">
     <div class="posts-container">
