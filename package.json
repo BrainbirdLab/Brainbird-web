@@ -15,7 +15,7 @@
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"highlight.js": "^11.10.0",
 		"rss-parser": "^3.13.0",
-		"sass": "^1.70.0",
+		"sass": "^1.79.5",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"tslib": "^2.4.1",

@@ -25,15 +25,6 @@
   </svelte:head>
   
   <main>
-    <nav>
-      <div class="logo">{companyName}</div>
-      <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="/articles">Articles</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
   
     <header>
       {#if visible}
@@ -80,17 +71,12 @@
   </main>
   
   <style lang="scss">
-    $primary-color: #00a8ff;
-    $secondary-color: #192a56;
-    $background-color: #f5f6fa;
-    $text-color: #2f3640;
-    $accent-color: #ffa502;
   
     :global(body) {
-      background-color: $background-color;
+      background-color: var(--background-color);
       margin: 0;
       padding: 0;
-      color: $text-color;
+      color: var(--text-color);
     }
   
     main {
@@ -100,37 +86,11 @@
       padding: 0 20px;
     }
   
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 0;
-      
-      .logo {
-        font-size: 1.5em;
-        font-weight: 700;
-        color: $primary-color;
-      }
-  
-      .nav-links {
-        a {
-          margin-left: 20px;
-          text-decoration: none;
-          color: $secondary-color;
-          font-weight: 600;
-          transition: color 0.3s ease;
-  
-          &:hover {
-            color: $primary-color;
-          }
-        }
-      }
-    }
   
     header {
       text-align: center;
       padding: 100px 0;
-      background: linear-gradient(135deg, $secondary-color, $primary-color);
+      background: linear-gradient(135deg, rgb(79, 79, 236), var(--accent-color));
       color: white;
       border-radius: 10px;
       margin-bottom: 60px;
@@ -152,7 +112,7 @@
   
       h2 {
         font-size: 2.5em;
-        color: $secondary-color;
+        color: var(--secondary-color);
         margin-bottom: 30px;
         text-align: center;
       }
@@ -178,11 +138,11 @@
         h3 {
           font-size: 1.2em;
           margin-top: 15px;
-          color: $secondary-color;
+          color: var(--secondary-color);
         }
   
         .service-icon {
-          color: $primary-color;
+          color: var(--accent-color);
         }
       }
     }
@@ -204,7 +164,7 @@
   
       .cta-button {
         display: inline-block;
-        background-color: $accent-color;
+        background-color: var(--accent-color);
         color: white;
         padding: 15px 30px;
         border-radius: 30px;
@@ -222,7 +182,7 @@
     footer {
       text-align: center;
       padding: 20px 0;
-      color: $secondary-color;
+      color: var(--secondary-color);
     }
   
     @media (max-width: 768px) {

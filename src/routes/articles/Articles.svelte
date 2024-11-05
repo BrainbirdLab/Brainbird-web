@@ -278,7 +278,7 @@
             gap: 0.5rem;
             font-size: 0.8rem;
             padding: 10px;
-            background: var(--dark-color-hover);
+            background: var(--dp-color);
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
         }
