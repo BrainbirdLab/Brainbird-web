@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: light;
-    src: url('$lib/fonts/light.woff2') format('woff2');
+    src: url('./fonts/light.woff2') format('woff2');
 }
 
 @font-face {
     font-family: caviet;
-    src: url('$lib/fonts/caviet.woff2') format('woff2');
+    src: url('./fonts/caviet.woff2') format('woff2');
 }
 
 * {
@@ -40,15 +40,15 @@ img{
 :root {
     --accent: #4ad6db;
     --accent-semi-transparent: #00bbd417;
-    --dark-color: #1e3a4b;
+    --dark-color: #c7c7c7;
     --dark-color-hover: #2f4e5c;
-    --primary-color: #041e2f;
+    --primary-color: #efefef;
     --full-width-content: min(100%, 800px);
     --light-dark: #607D8B;
     --light-dark-hover: #9eb7c4;
     --label-color: #7193a3;
     --main-color: #c0d6e1;
-    --text-color: ghostwhite;
+    --text-color: rgb(14, 14, 14);
     --focus: #2b5c63;
     --dp-color: #ffe2be;
 }
@@ -75,10 +75,11 @@ html, body{
     height: 100%;
     width: 100%;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
     overscroll-behavior-y: none;
     scroll-padding-top: 50px;
+    flex-direction: column;
 }
 
 input:autofill,

@@ -72,6 +72,8 @@
         return getTitle(url);
     }
 
+    let loaded = $state(false);
+
     onMount(() => {
         let postTitle = window.location.hash?.replace("#/", "") || "";
 
@@ -83,18 +85,20 @@
                 currentContentIndex = index + 1;
             } else {
                 currentContentIndex = 1;
-                const url = `/#/${parseTitleFromUrl(data.feed[currentContentIndex - 1]?.link)}`;
+                const url = `/articles/#/${parseTitleFromUrl(data.feed[currentContentIndex - 1]?.link)}`;
                 //replaceState(url, { contact: false, messageSent: false });
                 goto(url, { replaceState: true });
             }
         } else {
             currentContentIndex = 1;
-            const url = `/#/${parseTitleFromUrl(data.feed[currentContentIndex - 1]?.link)}`;
+            const url = `/articles/#/${parseTitleFromUrl(data.feed[currentContentIndex - 1]?.link)}`;
             //replaceState(url, { contact: false, messageSent: false });
             goto(url, { replaceState: true });
         }
 
         highlight();
+
+        loaded = true;
     });
 
     function readPost(node: HTMLElement) {
@@ -139,7 +143,7 @@
     }
 
     function makeThumLink(data: string): string {
-        /*
+    
         const div = document.createElement("div");
         div.innerHTML = data;
 
@@ -150,18 +154,15 @@
         textDiv.classList.add("thumb-text-div");
         newDiv.appendChild(textDiv);
         return newDiv.innerHTML;
-        */
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(data, "text/html");
-        const text = doc.body.innerText.substring(0, 200) + "...";
-        return text;
     }
+
 </script>
 
 <svelte:head>
     <title>Brainbird | Articles</title>
 </svelte:head>
 
+{#if loaded}
 <div class="shrink-wrapper">
     <div class="posts-container">
         <div class="post">
@@ -244,6 +245,7 @@
         </div>
     </section>
 {/if}
+{/if}
 
 <style lang="scss">
     .head {
@@ -283,7 +285,7 @@
         .article-content {
             font-size: 0.9rem;
             background: #ffffff;
-            color: black;
+            color: rgb(0, 0, 0);
             width: 100%;
             text-align: left;
             padding: 10px 5% 5%;
