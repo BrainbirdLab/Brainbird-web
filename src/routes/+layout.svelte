@@ -13,12 +13,6 @@
 
 <nav>
 <div class="logo">BrainbirdLab</div>
-<div class="nav-links">
-    <a href="#services" onclick={() => goto("/#services")}>Services</a>
-    <a href="#articles" onclick={() => goto("/#acticles")}>Articles</a>
-    <a href="#about" onclick={() => goto("/#about")}>About</a>
-    <a href="#contact" onclick={() => goto("/#contact")}>Contact</a>
-</div>
 </nav>
 
 {@render children?.()}
@@ -35,20 +29,6 @@
         font-size: 1.5em;
         font-weight: 700;
         color: var(--accent-color);
-      }
-  
-      .nav-links {
-        a {
-          margin-left: 20px;
-          text-decoration: none;
-          font-weight: 600;
-          transition: color 0.3s ease;
-            color: var(--text-color);
-        &:hover {
-            color: var(--accent-color);
-            text-decoration: underline;
-          }
-        }
       }
     }
 </style>
